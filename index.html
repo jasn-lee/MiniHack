@@ -1,35 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CogniCreator</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    
 
- <!DOCTYPE html>
- <html lang="en">
-   <head>
-     <meta charset="UTF-8" />
-     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-     <title>CogniCreator</title>
-     <link rel="stylesheet" href="style.css" />
-   </head>
-   <body>
-     <div class="mainContainer">
-       <div class="BiggerHeader">
-         <div class="Left">
-           <div class="Header">
-             <div class="Timer">
-               <h1>Timer</h1>
-             </div>
- 
-             <div class="StartStop">
-               <div class="Start">
-                 <button type="button" class = "Button">Start</button>
-               </div>
-               <div class="ButtonSpacer"></div>
-               <div class="Stop">
-                 <button type="button" class = "Button">Stop</button>
-               </div>
-             </div>
-           </div>
-           <div class="DivSpacer"></div>
-           <div class="Bio">
+    <div class="mainContainer">
+      <div class="BiggerHeader">
+        <div class="Left">
+          <div class="Header">
+            <div class="Timer">
+              <div class="container">
+                <h1>Timer</h1>
+                <div id="time">
+                  <span class="digit" id="hr"> 00</span>
+                  <span class="txt">Hr</span>
+                  <span class="digit" id="min"> 00</span>
+                  <span class="txt">Min</span>
+                  <span class="digit" id="sec"> 00</span>
+                  <span class="txt">Sec</span>
+                  <span class="digit" id="count"> 00</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="StartStop">
+              <div class="StartButton">
+                <button type="button" class="Button" id="start">Start</button>
+              </div>
+              <div class="ButtonSpacer"></div>
+              <div class="StopButton">
+                <button type="button" class="Button" id="stop">Stop</button>
+              </div>
+              <div class="ButtonSpacer"></div>
+              <div class="SubmitButton">
+                <button type="button" class="Button" id="submit">Submit</button>
+              </div>
+            </div>
+          </div>
+          <div class="DivSpacer"></div>
+          <div class="Bio">
             <h1 id="quoteHeader">Inspirational quote of the session</h1>
-            <span id="quote">"You miss 100% of the shots that you don't take" -Wayne Gretzky -Michael Scott</span>
+             <p> <span id="quote"></span></p>
           </div>
         </div>
         <div class="leaderboard">
@@ -52,7 +68,192 @@
           </div>
         </div>
       </div>
-     </div>
-   </body>
- </html>
+    </div>
+  </body>
+</html>
 
+<script>
+  let startBtn = document.getElementById("start");
+  let stopBtn = document.getElementById("stop");
+  let submitBtn = document.getElementById("submit");
+
+  let hour = 00;
+  let minute = 00;
+  let second = 00;
+  let count = 00;
+
+  startBtn.addEventListener("click", function () {
+    timer = true;
+    stopWatch();
+  });
+
+  stopBtn.addEventListener("click", function () {
+    timer = false;
+  });
+
+  submitBtn.addEventListener("click", function () {
+    timer = false;
+    hour = 0;
+    minute = 0;
+    second = 0;
+    count = 0;
+    document.getElementById("hr").innerHTML = "00";
+    document.getElementById("min").innerHTML = "00";
+    document.getElementById("sec").innerHTML = "00";
+    document.getElementById("count").innerHTML = "00";
+  });
+
+  function stopWatch() {
+    if (timer) {
+      count++;
+
+      if (count == 100) {
+        second++;
+        count = 0;
+      }
+
+      if (second == 60) {
+        minute++;
+        second = 0;
+      }
+
+      if (minute == 60) {
+        hour++;
+        minute = 0;
+        second = 0;
+      }
+
+      let hrString = hour;
+      let minString = minute;
+      let secString = second;
+      let countString = count;
+
+      if (hour < 10) {
+        hrString = "0" + hrString;
+      }
+
+      if (minute < 10) {
+        minString = "0" + minString;
+      }
+
+      if (second < 10) {
+        secString = "0" + secString;
+      }
+
+      if (count < 10) {
+        countString = "0" + countString;
+      }
+
+      document.getElementById("hr").innerHTML = hrString;
+      document.getElementById("min").innerHTML = minString;
+      document.getElementById("sec").innerHTML = secString;
+      document.getElementById("count").innerHTML = countString;
+      setTimeout(stopWatch, 10);
+    }
+  }
+</script>
+
+<script>
+
+const quotes = ["Thomas Edison - Genius is one percent inspiration and ninety-nine percent perspiration.",
+"Yogi Berra - You can observe a lot just by watching.",
+"Abraham Lincoln - A house divided against itself cannot stand.",
+"Johann Wolfgang von Goethe - Difficulties increase the nearer we get to the goal.",
+"Byron Pulsifer - Fate is in your hands and no one elses",
+"Lao Tzu - Be the chief but never the lord.",
+"Carl Sandburg - Nothing happens unless first we dream.",
+"Aristotle - Well begun is half done.",
+"Yogi Berra - Life is a learning experience, only if you learn.",
+"Margaret Sangster - Self-complacency is fatal to progress.",
+"Buddha - Peace comes from within. Do not seek it without.",
+"Byron Pulsifer - What you give is what you get.",
+"Iris Murdoch - We can only learn to love by loving.",
+"Karen Clark - Life is change. Growth is optional. Choose wisely.",
+"Wayne Dyer - You'll see it when you believe it.",
+"Anonymous - Today is the tomorrow we worried about yesterday.",
+"Anonymous - It's easier to see the mistakes on someone else's paper.",
+"Anonymous - Every man dies. Not every man really lives.",
+"Lao Tzu - To lead people walk behind them.",
+"William Shakespeare - Having nothing, nothing can he lose.",
+"Henry J. Kaiser - Trouble is only opportunity in work clothes.",
+"Publilius Syrus - A rolling stone gathers no moss.",
+"Napoleon Hill - Ideas are the beginning points of all fortunes.",
+"Donald Trump - Everything in life is luck.",
+"Lao Tzu - Doing nothing is better than being busy doing nothing.",
+"Benjamin Spock - Trust yourself. You know more than you think you do.",
+"Confucius - Study the past, if you would divine the future.",
+"Anonymous - The day is already blessed, find peace within it.",
+"Sigmund Freud - From error to error one discovers the entire truth.",
+"Benjamin Franklin - Well done is better than well said.",
+"Ella Williams - Bite off more than you can chew, then chew it.",
+"Buddha - Work out your own salvation. Do not depend on others.",
+"Benjamin Franklin - One today is worth two tomorrows.",
+"Christopher Reeve - Once you choose hope, anythings possible.",
+"Albert Einstein - God always takes the simplest way.",
+"Charles Kettering - One fails forward toward success.",
+"Anonymous - From small beginnings come great things.",
+"Chinese proverb - Learning is a treasure that will follow its owner everywhere",
+"Socrates - Be as you wish to seem.",
+"V. Naipaul - The world is always in movement.",
+"John Wooden - Never mistake activity for achievement.",
+"Haddon Robinson - What worries you masters you.",
+"Pearl Buck - One faces the future with ones past.",
+"Brian Tracy - Goals are the fuel in the furnace of achievement.",
+"Leonardo da Vinci - Who sows virtue reaps honour.",
+"Dalai Lama - Be kind whenever possible. It is always possible.",
+"Chinese proverb - Talk doesn't cook rice.",
+"Buddha - He is able who thinks he is able.",
+"Larry Elder - A goal without a plan is just a wish.",
+"Michael Korda - To succeed, we must first believe that we can.",
+"Albert Einstein - Learn from yesterday, live for today, hope for tomorrow.",
+"James Lowell - A weed is no more than a flower in disguise.",
+"Yoda - Do, or do not. There is no try.",
+"Harriet Beecher Stowe - All serious daring starts from within.",
+"Byron Pulsifer - The best teacher is experience learned from failures.",
+"Murray Gell-Mann - Think how hard physics would be if particles could think.",
+"John Lennon - Love is the flower you've got to let grow.",
+"Napoleon Hill - Don't wait. The time will never be just right.",
+"Pericles - Time is the wisest counsellor of all.",
+"Napoleon Hill - You give before you get.",
+"Socrates - Wisdom begins in wonder.",
+"Baltasar Gracian - Without courage, wisdom bears no fruit.",
+"Aristotle - Change in all things is sweet.",
+"Byron Pulsifer - What you fear is that which requires action to overcome.",
+"Cullen Hightower - When performance exceeds ambition, the overlap is called success.",
+"African proverb - When deeds speak, words are nothing.",
+"Wayne Dyer - Real magic in relationships means an absence of judgement of others.",
+"Albert Einstein - I never think of the future. It comes soon enough.",
+"Ralph Emerson - Skill to do comes of doing.",
+"Sophocles - Wisdom is the supreme part of happiness.",
+"Maya Angelou - I believe that every person is born with talent.",
+"Abraham Lincoln - Important principles may, and must, be inflexible.",
+"Richard Evans - The undertaking of a new action brings new strength.",
+"Ralph Emerson - The years teach much which the days never know.",
+"Ralph Emerson - Our distrust is very expensive.",
+"Bodhidharma - All know the way; few actually walk it.",
+"Johann Wolfgang von Goethe - Great talent finds happiness in execution.",
+"Michelangelo - Faith in oneself is the best and safest course.",
+"Winston Churchill - Courage is going from failure to failure without losing enthusiasm.",
+"Leo Tolstoy - The two most powerful warriors are patience and time.",
+"Lao Tzu - Anticipate the difficult by managing the easy.",
+"Buddha - Those who are free of resentful thoughts surely find peace.",
+"Sophocles - A short saying often contains much wisdom.",
+"Anonymous - It takes both sunshine and rain to make a rainbow.",
+"Anonymous - A beautiful thing is never perfect.",
+"Princess Diana - Only do what your heart tells you.",
+"John Pierrakos - Life is movement-we breathe, we eat, we walk, we move!",
+"Eleanor Roosevelt - No one can make you feel inferior without your consent.",
+"Richard Bach - Argue for your limitations, and sure enough theyre yours.",
+"Seneca - Luck is what happens when preparation meets opportunity.",
+"Napoleon Bonaparte - Victory belongs to the most persevering.",
+"William Shakespeare - Love all, trust a few, do wrong to none.",
+"Richard Bach - In order to win, you must expect to win.",
+"Napoleon Hill - A goal is a dream with a deadline.",
+"Napoleon Hill - You can do it if you believe you can!",
+"Bo Jackson - Set your goals high, and don't stop till you get there.",
+"Anonymous - Every new day is another chance to change your life.",
+"Thich Nhat Hanh - Smile, breathe, and go slowly.",
+"Liberace - Nobody will believe in you unless you believe in yourself."]
+
+document.getElementById("quote").innerHTML = quotes[(Math.floor(Math.random() * quotes.length))];
+</script>

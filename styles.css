@@ -2,22 +2,21 @@
   display: flex;
   flex-direction: row;
   width: auto;
-  background-color: crimson;
-  padding: 10px;
+  background-image: linear-gradient(to bottom right, #B58ECC, #5DE6DE);
   border-radius: 5px;
+  font-family: Sans-serif;
+  color: white;
 }
 
 .BiggerHeader {
   display: flex;
   flex-direction: row;
   border-radius: 5px;
-  background-color: powderblue;
   width: 100%;
   
 }
 
 .Left {
-  background-color: limegreen;  
   width: 70%;
 }
 
@@ -26,8 +25,6 @@
   flex-direction: row;
   width: 100%;
   height: 400px;
-  background-color: blue;
-
   border-radius: 5px;
 }
 
@@ -35,6 +32,7 @@
   width: 30%;
   height: 20%;
   border-radius: 5px;
+  text-align: center;
 }
 
 .ButtonSpacer {
@@ -48,7 +46,6 @@
 .Bio {
   width: 100%;
   height: 400px;
-  background-color: yellow;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -58,11 +55,17 @@
 
 .Button {
   position: relative;
-  top: 40%;
+  top: 30%;
   left: 0%;
-  width: 50%;
-  height: 30%;
+  width: 80%;
+  height: 70%;
+  font-size: 55px;
   border-radius: 10px;
+  color: white;
+  background-color: transparent;
+  border-width: 5px;
+  border-color: white;
+  border-style: solid;
   
 }
 
@@ -72,26 +75,33 @@
   flex-direction: column;
   width: 70%;
   height: 100%;
-  background-color: limegreen;
   border-radius: 5px;
 }
 
 
-.Start {
-  background-color: green;
+.StartButton {
   width: 100%;
-  height: 50%;
+  height: 45%;
   border-radius: 5px;
   justify-content: center;
 }
 
-.Stop {
-  background-color: aquamarine;
+.StopButton {
   width: 100%;
   height: 50%;
   border-radius: 5px;
 }
 
+.SubmitButton {
+  width: 100%;
+  height: 50%;
+  border-radius: 5px;
+}
+
+.digit {
+  font-size: 35px;
+  
+}
 
 .leaderboard {
   display: flex;
@@ -106,9 +116,9 @@
 }
 
 #quote {
-    font-size: 1.5rem;
-    text-align: center;
-    padding: 2rem;
+  font-size: 1.5rem;
+  text-align: center;
+  padding: 2rem;
 }
 
 #quoteHeader {
@@ -124,6 +134,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  border-color: white;
 }
 
 .name {
