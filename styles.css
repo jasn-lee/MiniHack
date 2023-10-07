@@ -2,3 +2,32 @@
     display: flex;
     flex-direction: row;
 }
+
+.leaderboard {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#leaderboardHeader {
+    font-size: 2rem;
+}
+
+.profile {
+    padding: 5px;
+    font-size: 2rem;
+    border: 2px solid black;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.name {
+    align-self: flex-start;
+}
+
+.points {
+    align-self: flex-end;
+    text-align: right;
+}
