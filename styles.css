@@ -53,6 +53,16 @@
   border-radius: 5px;
 }
 
+.Button {
+  position: relative;
+  top: 40%;
+  left: 0%;
+  width: 50%;
+  height: 30%;
+  border-radius: 10px;
+  
+}
+
 .StartStop {
   text-align: center;
   display: flex;
@@ -62,6 +72,7 @@
   background-color: limegreen;
   border-radius: 5px;
 }
+
 
 .Start {
   background-color: green;
