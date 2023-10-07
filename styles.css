@@ -1,4 +1,78 @@
-.mainContainer {
-    display: flex;
-    flex-direction: row;
-}
+       
+       .mainContainer {
+        display: flex;
+        flex-direction: row;
+        width: auto;
+        background-color: crimson;
+        padding: 10px;
+        border-radius: 5px;
+      }
+
+      .BiggerHeader {
+        display: flex;
+        flex-direction: column;
+        border-radius: 5px;
+        background-color: powderblue;
+      }
+
+      .Header {
+        display: flex;
+        flex-direction: row;
+        width: 70%;
+        height: 400px;
+        background-color: blue;
+        padding: 10px;
+        border-radius: 5px;
+      }
+
+      .Timer {
+        width: 50%;
+        height: 20%;
+        border-radius: 5px;
+      }
+
+      .ButtonSpacer {
+        height: 1rem;
+      }
+
+      .DivSpacer {
+        height: 1rem;
+      }
+
+      .Bio {
+        width: 70%;
+        height: 400px;
+        background-color: yellow;
+        padding: 10px;
+        border-radius: 5px;
+      }
+
+      .StartStop {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        height: 100%;
+        background-color: limegreen;
+        border-radius: 5px;
+      }
+
+      .Start {
+        background-color: green;
+        width: 100%;
+        height: 50%;
+        border-radius: 5px;
+      }
+
+      .Stop {
+        background-color: aquamarine;
+        width: 100%;
+        height: 50%;
+        border-radius: 5px;
+      }
+
+      .Leaderboard {
+        width: 200px;
+        height: 100%;
+        background-color: pink;
+      }
