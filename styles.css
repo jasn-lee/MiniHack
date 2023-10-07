@@ -1,78 +1,111 @@
-       
-       .mainContainer {
-        display: flex;
-        flex-direction: row;
-        width: auto;
-        background-color: crimson;
-        padding: 10px;
-        border-radius: 5px;
-      }
+.mainContainer {
+  display: flex;
+  flex-direction: row;
+  width: auto;
+  background-color: crimson;
+  padding: 10px;
+  border-radius: 5px;
+}
 
-      .BiggerHeader {
-        display: flex;
-        flex-direction: column;
-        border-radius: 5px;
-        background-color: powderblue;
-      }
+.BiggerHeader {
+  display: flex;
+  flex-direction: row;
+  border-radius: 5px;
+  background-color: powderblue;
+  width: 100%;
+  
+}
 
-      .Header {
-        display: flex;
-        flex-direction: row;
-        width: 70%;
-        height: 400px;
-        background-color: blue;
-        padding: 10px;
-        border-radius: 5px;
-      }
+.Left {
+  background-color: limegreen;  
+  width: 70%;
+}
 
-      .Timer {
-        width: 50%;
-        height: 20%;
-        border-radius: 5px;
-      }
+.Header {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 400px;
+  background-color: blue;
 
-      .ButtonSpacer {
-        height: 1rem;
-      }
+  border-radius: 5px;
+}
 
-      .DivSpacer {
-        height: 1rem;
-      }
+.Timer {
+  width: 30%;
+  height: 20%;
+  border-radius: 5px;
+}
 
-      .Bio {
-        width: 70%;
-        height: 400px;
-        background-color: yellow;
-        padding: 10px;
-        border-radius: 5px;
-      }
+.ButtonSpacer {
+  height: 1rem;
+}
 
-      .StartStop {
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-        width: 50%;
-        height: 100%;
-        background-color: limegreen;
-        border-radius: 5px;
-      }
+.DivSpacer {
+  height: 1rem;
+}
 
-      .Start {
-        background-color: green;
-        width: 100%;
-        height: 50%;
-        border-radius: 5px;
-      }
+.Bio {
+  width: 100%;
+  height: 400px;
+  background-color: yellow;
 
-      .Stop {
-        background-color: aquamarine;
-        width: 100%;
-        height: 50%;
-        border-radius: 5px;
-      }
+  border-radius: 5px;
+}
 
-      .Leaderboard {
-        width: 200px;
-        height: 100%;
-        background-color: pink;
-      }
+.StartStop {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  height: 100%;
+  background-color: limegreen;
+  border-radius: 5px;
+}
+
+.Start {
+  background-color: green;
+  width: 100%;
+  height: 50%;
+  border-radius: 5px;
+  justify-content: center;
+}
+
+.Stop {
+  background-color: aquamarine;
+  width: 100%;
+  height: 50%;
+  border-radius: 5px;
+}
+
+
+.leaderboard {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 30%;
+
+}
+
+#leaderboardHeader {
+  font-size: 2rem;
+}
+
+.profile {
+  padding: 5px;
+  font-size: 2rem;
+  border: 2px solid black;
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.name {
+  align-self: flex-start;
+}
+
+.points {
+  align-self: flex-end;
+  text-align: right;
+}

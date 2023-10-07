@@ -4,34 +4,53 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CogniCreator</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div class="mainContainer">
       <div class="BiggerHeader">
-        <div class="Header">
-          <div class="Timer">
-            <h1>Timer</h1>
-          </div>
+        <div class="Left">
+          <div class="Header">
+            <div class="Timer">
+              <h1>Timer</h1>
+            </div>
 
-          <div class="StartStop">
-            <div class="Start">
-              <h1>Start Button</h1>
-            </div>
-            <div class="ButtonSpacer"></div>
-            <div class="Stop">
-              <h1>Stop Button</h1>
+            <div class="StartStop">
+              <div class="Start">
+                <button type="button">Start</button>
+              </div>
+              <div class="ButtonSpacer"></div>
+              <div class="Stop">
+                <button type="button">Stop</button>
+              </div>
             </div>
           </div>
-          <div class="leaderboard"></div>
+          <div class="DivSpacer"></div>
+          <div class="Bio">
+            <h1>This is my stats box or smth</h1>
+            <p>This is some description or quote??</p>
+          </div>
         </div>
-        <div class="DivSpacer"></div>
-        <div class="Bio">
-          <h1>This is my stats box or smth</h1>
-          <p>This is some description or quote??</p>
+        <div class="leaderboard">
+          <h3 id="leaderboardHeader">Leaderboard</h3>
+          <div class="profile">
+            <span class="name">1. John Doe</span>
+            <span class="points"> 10 Points</span>
+          </div>
+          <div class="profile">
+            <span class="name">2. Jane Doe </span>
+            <span class="points"> 8 Points</span>
+          </div>
+          <div class="profile">
+            <span class="name">3. Ben Stiller </span>
+            <span class="points"> 6 Points</span>
+          </div>
+          <div class="profile">
+            <span class="name">4. Rodrick </span>
+            <span class="points"> 2 Points</span>
+          </div>
         </div>
       </div>
-      <div class="Leaderboard"></div>
     </div>
   </body>
 </html>
